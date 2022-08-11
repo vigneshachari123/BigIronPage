@@ -2,13 +2,16 @@ import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import {Searchbar} from 'react-native-paper';
 import {Colors} from './../colors/Color';
-import ImageComponent from './ImageComponent';
+import Notification from './Notifications';
 
 function Home() {
   return (
     <View style={styles.container}>
+      <Notification />
       <Text style={styles.textColor}>Welcome</Text>
-      <Searchbar placeholder="Search here..." value="" />
+      <View style={styles.searchbarContainer}>
+        <Searchbar placeholder="Search here..." value="" />
+      </View>
       <View style={styles.horizonatLine}></View>
       <View style={styles.imageConatiner}>
         <Image
@@ -17,7 +20,6 @@ function Home() {
           resizeMode={'contain'}
         />
       </View>
-      <ImageComponent />
     </View>
   );
 }
@@ -27,8 +29,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#000',
   },
   textColor: {
-    fontSize: 20,
-    margin: 10,
+    fontSize: 24,
+    marginTop: 5,
+    marginLeft: 12,
     color: Colors.yellow,
   },
   horizonatLine: {
@@ -43,6 +46,10 @@ const styles = StyleSheet.create({
     marginTop: 3,
     marginLeft: 90,
     height: 55,
+  },
+  searchbarContainer: {
+    marginHorizontal: 10,
+    marginTop: 5,
   },
 });
 
