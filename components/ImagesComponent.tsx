@@ -7,35 +7,35 @@ import {
   MakeOfferSelect,
   RealEstateisSelectedState,
 } from '../store/Index';
+const ImageComponent = () => {
+  const EquipmentSelectHandler = () => {
+    EquipmentisSelectedState.selected = true;
+    RealEstateisSelectedState.selected = false;
+    LiveStockisSelectedState.selected = false;
+    MakeOfferSelect.selected = false;
+  };
 
-function EquipmentSelectHandler() {
-  EquipmentisSelectedState.selected = true;
-  RealEstateisSelectedState.selected = false;
-  LiveStockisSelectedState.selected = false;
-  MakeOfferSelect.selected = false;
-}
+  const RealEstateSelectHandler = () => {
+    RealEstateisSelectedState.selected = true;
+    EquipmentisSelectedState.selected = false;
+    LiveStockisSelectedState.selected = false;
+    MakeOfferSelect.selected = false;
+  };
 
-function RealEstateSelectHandler() {
-  RealEstateisSelectedState.selected = true;
-  EquipmentisSelectedState.selected = false;
-  LiveStockisSelectedState.selected = false;
-  MakeOfferSelect.selected = false;
-}
+  const LiveStockisSelectedHandler = () => {
+    LiveStockisSelectedState.selected = true;
+    RealEstateisSelectedState.selected = false;
+    EquipmentisSelectedState.selected = false;
+    MakeOfferSelect.selected = false;
+  };
 
-function LiveStockisSelectedHandler() {
-  LiveStockisSelectedState.selected = true;
-  RealEstateisSelectedState.selected = false;
-  EquipmentisSelectedState.selected = false;
-  MakeOfferSelect.selected = false;
-}
+  const MakeOfferisSelected = () => {
+    MakeOfferSelect.selected = true;
+    LiveStockisSelectedState.selected = false;
+    RealEstateisSelectedState.selected = false;
+    EquipmentisSelectedState.selected = false;
+  };
 
-function MakeOfferisSelected() {
-  MakeOfferSelect.selected = true;
-  LiveStockisSelectedState.selected = false;
-  RealEstateisSelectedState.selected = false;
-  EquipmentisSelectedState.selected = false;
-}
-function ImageComponent() {
   return (
     <View>
       <View style={Styles.imageConatiner}>
@@ -71,7 +71,7 @@ function ImageComponent() {
       <View style={Styles.horizontalLine}></View>
     </View>
   );
-}
+};
 
 const Styles = StyleSheet.create({
   imageConatiner: {
